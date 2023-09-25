@@ -38,7 +38,7 @@ span {
     height: fit-content;
     border: 0.2rem solid rgb(205, 204, 201);
     min-width: 40vmin;
-    min-height: 15rem;
+    min-height: 10rem;
 
     /*
     &:hover .text {
@@ -86,9 +86,9 @@ span {
     white-space: nowrap;
     align-items: center;
     background-clip: text;
-    text-shadow: 0 0 0.1rem rgba(255, 255, 255, 0.9);
+    text-shadow: 0 0 0.1rem rgba(255, 255, 255, 1);
     -webkit-background-clip: text;
-    background-image: linear-gradient(to right, yellow, red, green, rgb(226, 226, 231) 50%);
+    background-image: linear-gradient(to right, yellow, red, green, rgb(205, 204, 201) 50%);
     background-size: 200%;
     background-repeat: no-repeat;
     background-position-x: 100%;
