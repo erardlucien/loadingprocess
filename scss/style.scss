@@ -90,9 +90,9 @@ span {
     z-index: -1;
     background-color: lightskyblue;
     transform-origin: left;
-    transition: transform 2.2s linear;
+    // transition: transform 2.2s linear;
     transform: scaleX(0);
-    animation:  animation2 2s linear infinite;
+    animation:  animation2 2.2s linear infinite;
     // animation-fill-mode: both;
     // animation-direction: alternate;
 }
