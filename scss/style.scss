@@ -1,0 +1,126 @@
+// reset
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+// container
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// span 
+
+span {
+    display: flex;
+}
+
+// text-container
+
+.text-container {
+    position: relative;
+    z-index: 1;
+    width: fit-content;
+    height: fit-content;
+    border: 0.2rem solid rgb(205, 204, 201);
+
+    /*
+    &:hover .text {
+        background-position-x: 0%;
+        text-shadow: 0 0 0.1rem rgba(255, 255, 255, 0);
+        transition-delay: 1s, 200ms;
+    }
+
+    &:hover .text-background {
+        transform: scaleX(1);
+    }
+    */
+}
+
+// text, text-background
+
+.text,
+.text-background {
+    padding: 2rem 3.1rem;
+    min-width: 40vmin;
+    min-height: 15rem;
+}
+
+// text
+
+.text {
+    font-size: 3rem;
+    color: transparent;
+    justify-content: center;
+    white-space: nowrap;
+    align-items: center;
+    background-clip: text;
+    text-shadow: 0 0 0.1rem rgba(255, 255, 255, 0.9);
+    -webkit-background-clip: text;
+    background-image: linear-gradient(to right, yellow, red, green, rgb(226, 226, 231) 50%);
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    // transition: text-shadow, background  2s linear;
+    // transition-delay: 2s, 200ms;
+    animation:  animation1 2s linear 2s infinite;
+    // animation-fill-mode: both;
+    // animation-direction: alternate-reverse;
+}
+
+// text-background
+
+.text-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: lightskyblue;
+    transform-origin: left;
+    transition: transform 2.2s linear;
+    transform: scaleX(0);
+    animation:  animation2 2s linear infinite;
+    // animation-fill-mode: both;
+    // animation-direction: alternate;
+}
+
+// animation1
+
+@keyframes animation1 {
+    0% {
+        background-position-x: 100%;
+        transition: text-shadow, background  2s linear;
+        transition-delay: 2s, 200ms;
+    }
+
+    100% {
+        background-position-x: 0%;
+        text-shadow: 0 0 0.1rem rgba(255, 255, 255, 0);
+        transition-delay: 1s, 200ms;
+    }
+}
+
+// animation2
+
+@keyframes animation2 {
+    0% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
