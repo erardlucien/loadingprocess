@@ -33,9 +33,12 @@ span {
 .text-container {
     position: relative;
     z-index: 1;
+    overflow: hidden;
     width: fit-content;
     height: fit-content;
     border: 0.2rem solid rgb(205, 204, 201);
+    min-width: 40vmin;
+    min-height: 15rem;
 
     /*
     &:hover .text {
@@ -50,13 +53,28 @@ span {
     */
 }
 
+// text-container-active
+
+.text-container-active {
+
+    .text {
+        background-position-x: 0%;
+        text-shadow: 0 0 0.1rem rgba(255, 255, 255, 0);
+        transition-delay: 1s, 200ms;
+    }
+
+    .text-background {
+        transform: scaleX(1);
+    }
+}
+
 // text, text-background
 
 .text,
 .text-background {
     padding: 2rem 3.1rem;
-    min-width: 40vmin;
-    min-height: 15rem;
+    min-width: inherit;
+    min-height: inherit;
 }
 
 // text
@@ -74,11 +92,8 @@ span {
     background-size: 200%;
     background-repeat: no-repeat;
     background-position-x: 100%;
-    // transition: text-shadow, background  2s linear;
-    // transition-delay: 2s, 200ms;
-    animation:  animation1 2s linear infinite;
-    // animation-fill-mode: both;
-    // animation-direction: alternate-reverse;
+    transition: text-shadow, background  2s linear;
+    transition-delay: 2s, 200ms;
 }
 
 // text-background
@@ -88,39 +103,10 @@ span {
     top: 0;
     left: 0;
     z-index: -1;
+    min-width: 110%;
     background-color: lightskyblue;
     transform-origin: left;
-    // transition: transform 2.2s linear;
+    transition: transform 2.2s linear;
     transform: scaleX(0);
-    animation:  animation2 2.2s linear infinite;
-    // animation-fill-mode: both;
-    // animation-direction: alternate;
-}
-
-// animation1
-
-@keyframes animation1 {
-    0% {
-        background-position-x: 100%;
-        transition: text-shadow, background  2s linear;
-        transition-delay: 2s, 200ms;
-    }
-
-    100% {
-        background-position-x: 0%;
-        text-shadow: 0 0 0.1rem rgba(255, 255, 255, 0);
-        transition-delay: 1s, 200ms;
-    }
-}
-
-// animation2
-
-@keyframes animation2 {
-    0% {
-        transform: scaleX(0);
-    }
-
-    100% {
-        transform: scaleX(1);
-    }
+    animation:  animation2 2s linear infinite;
 }
